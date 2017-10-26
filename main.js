@@ -18,6 +18,15 @@ document.getElementById('textenter').value='';
 
 }
 )
+
+function removeItem()
+{
+	var del= this.parentNode.parentNode;
+	var item=  del.parentNode;
+	console.log(del);
+	console.log(item);
+ 	 item.removeChild(del);
+}
 function addItemtoDo(text)
 {
 
@@ -33,7 +42,7 @@ remove.innerHTML = removeSVG;
 var complete = document.createElement('button');
 complete.classList.add('complete');
 complete.innerHTML= completeSVG;
-
+remove.addEventListener('click', removeItem);
 buttons.appendChild(remove);
 buttons.appendChild(complete);
 item.appendChild(buttons);
